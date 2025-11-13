@@ -1,0 +1,5 @@
+com\student\dao\StudentDAO.class
+com\mycompany\mavenproject3\JakartaRestConfiguration.class
+com\student\controller\StudentController.class
+com\mycompany\mavenproject3\resources\JakartaEE10Resource.class
+com\student\model\Student.class
