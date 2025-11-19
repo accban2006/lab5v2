@@ -148,6 +148,45 @@
     </style>
 </head>
 <body>
+    <!-- Search Box -->
+<!-- Search Box -->
+<div class="search-box" style="margin-bottom: 20px; padding: 10px; background-color: #f5f5f5; border-radius: 8px; display: flex; align-items: center; gap: 10px;">
+
+    <form action="student" method="get" style="display: flex; align-items: center; gap: 10px;">
+        <!-- Hidden action field -->
+        <input type="hidden" name="action" value="search">
+
+        <!-- Keyword input field -->
+        <input type="text"
+               name="keyword"
+               placeholder="Search by code, name, or email..."
+               value="${keyword}"
+               style="padding: 8px 12px; border-radius: 5px; border: 1px solid #ccc; width: 250px;">
+
+        <!-- Submit button -->
+        <button type="submit" style="padding: 8px 12px; border: none; border-radius: 5px; background-color: #4A90E2; color: white; cursor: pointer;">
+            🔍 Search
+        </button>
+
+        <!-- Show "Clear" button only if a search is active -->
+        <c:if test="${not empty keyword}">
+            <a href="student?action=list"
+               style="padding: 8px 12px; background-color: #ccc; color: black; text-decoration: none; border-radius: 5px;">
+               Clear
+            </a>
+        </c:if>
+    </form>
+
+    <!-- Optional: Search results message -->
+    <c:if test="${not empty keyword}">
+        <p style="margin-left: 10px; font-style: italic; color: #333;">
+            Search results for: <strong>${keyword}</strong>
+        </p>
+    </c:if>
+
+</div>
+
+</div>
     <div class="container">
         <h1>📚 Student Management System</h1>
         <p class="subtitle">MVC Pattern with Jakarta EE & JSTL</p>
